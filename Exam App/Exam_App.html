@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam App</title>
+</head>
+<body>
+
+    <center>
+        <h1>Welcom to Exam App</h1>
+        <h3 id="output1"></h3>
+        <a href="index.html"><input type="button" value="Logout"></a>
+    </center>
+
+    <form id="examform">
+        <label>Q1. HTML is Case-sensitive language </label>
+        <br><br>
+        <input type="radio" id="q1true" name="q1" value="true">
+        <label for="q1true">True</label>
+        <input type="radio" id="q1false" name="q1" value="false">
+        <label for="q1false">False</label>
+
+        <br><br>
+
+        <label>Q2. JavaScript is object-based language </label>
+        <br><br>
+         <input type="radio" id="q2true" name="q2" value="true">
+        <label for="q2true">True</label>
+        <input type="radio" id="q2false" name="q2" value="false">
+        <label for="q2false">False</label>
+
+
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Cancel">
+
+        <h1 id="result"></h1>
+
+
+    </form>
+
+    <script>
+        let username=localStorage.getItem("username");
+        let d=new Date();
+        document.getElementById("output1").innerHTML="Welcome "+username+" <br>"+"Login at: "+d.toLocaleTimeString() +" and date "+d.toLocaleDateString();
+
+        document.getElementById("examform").addEventListener("submit",function (event){
+            event.preventDefault();
+            let score=0;
+            let q1_ans=document.getElementById("q1false").checked;
+            let q2_ans=document.getElementById("q2true").checked;
+
+            if(q1_ans){
+                score=score+1;
+            }
+            if(q2_ans){
+                score=score+1;
+            }
+            // let ques=["q1","q2"];
+            // const selector=`input[name='${ques}':checked]`;
+           if(!document.querySelector("input[name='q1']:checked")){
+            alert("Please select answer .")
+           }
+            if(!document.querySelector("input[name='q2']:checked")){
+            alert("Please select answer .")
+           }
+
+
+            document.getElementById("result").innerHTML="Your Score = "+score;
+        })
+    </script>
+    
+</body>
+</html>

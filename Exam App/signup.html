@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center> 
+
+  <h1>SignUp</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signin.html">SignIn</a>
+    </nav>
+
+   <hr>
+    <form id="signupform">
+        <label>Enter Name</label>
+        <input type="text" id="username" required placeholder="Enter your name ">
+        <br><br>
+        <label>Enter Email
+        </label>
+        <input type="email" id="uemail" required  placeholder="Enter your emailid ">
+        <br><br>
+        <label>Enter Password</label>
+        <input type="password" id="upass" required  placeholder="Enter your password">
+        <br><br>
+         <label>Enter Confirm Password</label>
+        <input type="password" id="ucpass" required  placeholder="Enter your Confirm password">
+                <br><br>
+        <input type="submit" value="Submit">
+        <a href="index.html"><input type="button" value="Cancel"></a>
+        
+    </form>
+    </center>
+
+    <script>
+
+        document.getElementById("signupform").addEventListener("submit",function(event){
+              event.preventDefault();
+              let username=document.getElementById("username").value;
+              let uemail=document.getElementById("uemail").value;
+              let upass=document.getElementById("upass").value;
+              let ucpass=document.getElementById("ucpass").value;
+
+              console.log(username,uemail,upass,ucpass);
+           if(upass===ucpass){
+            localStorage.setItem("username",username);
+            localStorage.setItem("uemail",uemail);
+            localStorage.setItem("upass",upass);
+
+            alert("Registration Successfully Done !");
+            window.location.href="examapp.html"
+           }
+           else{
+            alert("Password and confirm password does not match . tyr again !")
+           }
+
+        })
+
+    </script>
+  
+    
+</body>
+</html>

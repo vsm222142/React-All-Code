@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <center>
+ 
+        <h1>SignIn</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="signup.html">SignUp</a>
+        </nav>
+        <hr>
+        <form id="signinform">
+
+            <label>Enter Email
+            </label>
+            <input type="email" id="uemail" placeholder="Enter your emailid ">
+            <br><br>
+            <label>Enter Password</label>
+            <input type="password" id="upass" placeholder="Enter your password">
+            <br><br>
+
+            <input type="submit" value="Submit">
+            <a href="index.html"><input type="button" value="Cancel"></a>
+
+        </form>
+
+            </center>
+
+        <script>
+            document.getElementById("signinform").addEventListener("submit", function (event) {
+                event.preventDefault();
+                let uemail = document.getElementById("uemail").value;
+
+                let upass = document.getElementById("upass").value;
+
+                console.log(uemail, upass);
+
+                let storedemail = localStorage.getItem("uemail");
+                let storedpassword = localStorage.getItem("upass");
+
+                console.log(storedemail,storedpassword);
+                if(uemail===storedemail && upass==storedpassword){
+                    alert("Login Successfully !!!!");
+                    window.location.href="Bankapp.html";
+                }
+                else{
+                    alert("Login failed ! Please check email or password !");
+                }
+            })
+        </script>
+
+
+
+</body>
+
+</html>

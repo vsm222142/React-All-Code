@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Date </title>
+</head>
+<body>
+    <div>
+        <h2>When we click button then show Current date .</h2>
+        <button onclick="displaydate()">Click !</button>
+        <div id="showdate">
+
+        </div>
+    </div>
+
+    <script>
+        function displaydate(){
+            const d=new Date();
+            document.getElementById("showdate").innerHTML=`<h3>Current Time and Date : ${d.toLocaleTimeString()} and ${d.toLocaleDateString()} </h3>`
+
+        }
+    </script>
+</body>
+</html>

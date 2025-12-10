@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h3 id="output"></h3>
+    <button onclick="fetch_products()">Fetch Products</button>
+<script>
+   function fetch_products(){
+        fetch("https://dummyjson.com/products")
+        .then((Response)=>Response.json())
+        .then((data)=>{
+            console.log(data);
+        })
+
+    }
+
+</script>
+ 
+    
+</body>
+</html>

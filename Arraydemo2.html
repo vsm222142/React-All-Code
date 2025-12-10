@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arraydemo2</title>
+</head>
+<body>
+    <script>
+
+        // //WAP to take student marks from user as per count entered and show percentage of each student.
+        // // cousider marks as out of 500.
+        // let count=parseInt(prompt("Enter the Count No. : "));
+        // let marks=[],percentage=[];
+        // for(let i=0;i<count;i++){
+        //     let total_marks=parseInt(prompt(`Enter ${i} student total Marks : `));
+        //     marks.push(total_marks);
+        // }
+        // console.log(`Total marks of ${marks}`);
+
+        // for (let j of marks){ 
+        //     console.log(`Percentage of Each Student : ${j/5}%`);
+     ////   }
+
+        // WAP to show below array in aceending order .
+
+        let arr2=[45,33,64,32,85,21,75,92];  //[21,32,33,45,64,75] .
+
+        console.log(arr2);
+
+
+        for(let i=0;i<arr2.length-1;i++){
+            for(j=0;j<arr2.length;j++){
+                if(arr2[j]>arr2[j+1]){
+                    let temp=arr2[j];
+                    arr2[j]=arr2[j+1]
+                    arr2[j+1]=temp;
+                }
+            }
+        }
+
+        console.log("Accending Order : ",arr2); // Accending order.
+
+
+
+        console.log("Second Highest Element : ",arr2[arr2.length-2]);  // Second highest element .
+
+
+
+
+
+
+    </script>
+</body>
+</html>

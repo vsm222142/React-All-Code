@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator !</title>
+    <style>
+        .main1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;                                                  
+            height: 100vh;
+            background-color: bisque;
+        }
+
+        .main2 {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #output {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            height: 30%;
+        }
+
+        .opbtn {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 20px;
+
+        }
+
+        .clear,.result {
+            padding: 10px 30px;
+            border-radius: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main1">
+
+
+
+        <!-- <div id="stopwatch">
+  <span id="display">00:00</span>
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+  <button onclick="reset()">Reset</button>
+</div> -->
+
+
+        <div class="main2">
+            <label>Enter the First No. : </label>
+            <input type="number" id="num1" placeholder="Enter the first No. : ">
+            <label>Enter the Second No. : </label>
+            <input type="number" id="num2" placeholder="Enter the Second No. : ">
+        </div>
+        <div class="opbtn">
+            <button class="btn" onclick="calculator('+')">+</button>
+            <button class="btn" onclick="calculator('-')">-</button>
+            <button class="btn" onclick="calculator('*')">*</button>
+            <button class="btn" onclick="calculator('/')">/</button>
+            <button class="btn" onclick="calculator('%')">%</button>
+
+        </div>
+        <button onclick="result()" class="result">Result</button>
+        <button onclick="reset()" class="clear">Clear</button>
+        <div id="output">
+
+        </div>
+
+
+    </div>
+
+
+    <script>
+        function calculator(op) {
+            let num1 = parseFloat(document.getElementById("num1").value);
+
+            let num2 = parseFloat(document.getElementById("num2").value);
+
+            let ans;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                return document.getElementById("output").innerHTML = `Please Enter the Number ! `;
+            }
+            switch (op) { 
+                case '+': ans = num1 + num2;
+                    break;
+                case "-": ans = num1 - num2;
+                    break;
+                case '*': ans = num1 * num2;
+                    break;
+                case '/': ans = num1 / num2;
+                    break;
+                case '%': ans = num1 % num2;
+                    break;
+            }
+
+            document.getElementById("output").innerHTML=`Result of Operation = ${num1} ${op} ${num2} = ${ans} ` 
+      
+      //      let Result= `Result of Operation = ${num1} ${op} ${num2} = ${ans} `
+
+            function result(){
+   //document.getElementById("output").innerHTML=Result; 
+//   document.getElementById("output").innerHTML = `Result of Opration = ${num1} ${op} ${num2} = ${ans} `
+
+            }
+          
+        }
+
+        function reset() {
+            document.getElementById("num1").value = '';
+
+            document.getElementById("num2").value = '';
+
+
+            document.getElementById("output").innerHTML = "";
+
+        }
+
+
+
+        // Timer coding
+
+//         let sec = 0;
+// let interval = null;
+
+// function stopwatch() {
+//   sec++;
+//   let min = Math.floor(sec / 60);
+//   let seconds = sec % 60;
+//   document.getElementById("display").innerText =
+//     (min < 10 ? "0" + min : min) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+// }
+
+// function start() {
+//   if (interval === null) {
+//     interval = setInterval(stopwatch, 1000);
+//   }
+// }
+
+// function stop() {
+//   clearInterval(interval);
+//   interval = null;
+// }
+
+// function reset() {
+//   sec = 0;
+//   document.getElementById("display").innerText = "00:00";
+//   clearInterval(interval);
+//   interval = null;
+// }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

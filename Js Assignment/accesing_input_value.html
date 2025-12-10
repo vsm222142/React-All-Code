@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessing Input Value</title>
+</head>
+
+<body>
+    <form id="showdata">
+        <label>Enter the First Name : </label>
+        <input type="text" id="fs">
+        <br><br>
+        <label>Enter the Last Name : </label>
+        <input type="text" id="ls">
+        <br><br>
+
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        document.getElementById("showdata").addEventListener("submit", (event) => {
+            event.preventDefault();
+            let userFirst_n = document.getElementById("fs").value;
+            let userLast_n = document.getElementById("ls").value;
+
+            console.log("First Name : ", userFirst_n);
+
+            console.log("Last Name : ", userLast_n);
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency API </title>
+</head>
+<body>
+
+    <center>
+        <h1>Currency Exchange</h1>
+        <label>Enter Amount : </label>
+    
+        <input type="number" id="amount" placeholder="Enter Amount "><br><br>
+        <label> Select From Country</label>
+        <select id="fromcountry">
+            <option value="">------</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="INR">INR</option>
+        </select>
+        <br><br>
+
+
+           <label> Select From Country</label>
+        <select id="tocountry">
+            <option value="">------</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="INR">INR</option>
+        </select>
+        <br><br>
+        <mark id="output"> </mark>
+        <br><br>
+        <button onclick="exchange()">Currency Convertor</button>
+    </center>
+
+    <script>
+        async function  exchange() {
+            
+    
+
+
+        let amount=Number(document.getElementById("amount").value);
+
+        let fromcountry=document.getElementById("fromcountry").value;
+
+        let tocountry=document.getElementById("tocountry").value;
+
+        console.log(amount,fromcountry,tocountry);
+         const response= await fetch(`https://api.exchangerate-api.com/v4/latest/${fromcountry}`);
+             const data= await response.json();
+
+             console.log(data.rates);
+             let rates= data.rates[tocountry];
+             console.log(rates);
+
+             let answer =amount*rates;
+             console.log(answer);
+             document.getElementById("output").innerHTML=`${amount} ${fromcountry} to ${tocountry} = ${answer}`
+
+                    }
+    </script>
+    
+</body>
+</html>

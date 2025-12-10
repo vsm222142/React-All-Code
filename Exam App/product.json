@@ -1,0 +1,15 @@
+[
+    {
+        "id":1,
+        "title": "Mobile1234",
+        "category":"Mobile",
+        "price":30000
+    },
+
+    {
+        "id":2,
+        "title": "Apple PC",
+        "category":"Computer",
+        "price":40000
+    }
+]
