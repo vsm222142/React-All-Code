@@ -12,7 +12,7 @@ export default function Home() {
                 <button onClick={() => setIsLogout(!isLogin)}>
                     {isLogin ? "Logout" : "Login"}
                 </button>
-            </div>
+            </div>-
         </>
-    )
+    )  
 }
