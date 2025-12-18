@@ -5,6 +5,9 @@ import ReducerDemo from './components/ReducerDemo';
 import RefDemo from './components/RefDemo';
 import ParamDeemo from './components/ParamDemo';
 import EffectDemo from './components/EffectDemo';
+import StopWatch from './components/StopWatch';
+import StateDemo2 from './components/StateDemo2';
+import { ContextDemo, ThemeButton } from './components/ContextDemo';
 
 function App() {
 
@@ -15,8 +18,15 @@ function App() {
       {/* <ReducerDemo/>
 
     <RefDemo/> */}
-      <ParamDeemo />
+      {/* <ParamDeemo />
       <EffectDemo />
+      <StopWatch/> */}
+      <StateDemo2 />
+
+     <ContextDemo>
+      <ThemeButton/>
+     </ContextDemo>
+      
     </>
   )
 }
