@@ -11,6 +11,7 @@ import { ContextDemo, ThemeButton } from './components/ContextDemo';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import {Home,About} from "./components/Navigate";
 import Memo from './components/Memo';
+import Callback from './components/Callback';
 function App() {
 
 
@@ -41,6 +42,7 @@ function App() {
       </BrowserRouter>
       <Memo/>
       
+      <Callback/>
     </>
     
   )
