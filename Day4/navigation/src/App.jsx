@@ -24,10 +24,10 @@ function App() {
 
 
 
-      {/* <Base />
+      <Base />
       <Home />
       <About />
-      <Contact /> */}
+      <Contact />
 
     </>
   )

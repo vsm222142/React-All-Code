@@ -11,10 +11,10 @@ function App() {
 
   return (
     <>
-      {/* <UseStateDemo/> */}
-      {/* <ReducerDemo/>
+      <UseStateDemo/> 
+       <ReducerDemo/>
 
-    <RefDemo/> */}
+    <RefDemo/>
       <ParamDeemo />
       <EffectDemo />
     </>
