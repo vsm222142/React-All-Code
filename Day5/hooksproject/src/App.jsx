@@ -5,7 +5,13 @@ import ReducerDemo from './components/ReducerDemo';
 import RefDemo from './components/RefDemo';
 import ParamDeemo from './components/ParamDemo';
 import EffectDemo from './components/EffectDemo';
-
+import StopWatch from './components/StopWatch';
+import StateDemo2 from './components/StateDemo2';
+import { ContextDemo, ThemeButton } from './components/ContextDemo';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import {Home,About} from "./components/Navigate";
+import Memo from './components/Memo';
+import Callback from './components/Callback';
 function App() {
 
 
@@ -14,10 +20,36 @@ function App() {
       <UseStateDemo/> 
        <ReducerDemo/>
 
+<<<<<<< HEAD
     <RefDemo/>
       <ParamDeemo />
+=======
+    <RefDemo/> */}
+      {/* <ParamDeemo />
+>>>>>>> 5dac8afbe17523b48da143d79526b2f9beeb464e
       <EffectDemo />
+      <StopWatch/> */}
+      {/* <StateDemo2 />
+
+     <ContextDemo>
+      <ThemeButton/>
+     </ContextDemo> */}
+
+     <BrowserRouter>
+     <Routes>
+      <Route path="/" element={<Home/>}/>
+
+      <Route path="/about" element={<About/>}/>
+
+   
+    
+      </Routes>
+      </BrowserRouter>
+      <Memo/>
+      
+      <Callback/>
     </>
+    
   )
 }
 
